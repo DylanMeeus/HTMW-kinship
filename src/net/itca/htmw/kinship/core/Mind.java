@@ -1,5 +1,6 @@
 package net.itca.htmw.kinship.core;
 
+import net.itca.core.htmw.kinship.demontypes.DistinguishGender;
 import net.itca.core.htmw.kinship.demontypes.GoalReached;
 import net.itca.core.htmw.kinship.demontypes.ParentOf;
 import net.itca.core.htmw.kinship.demontypes.SiblingOf;
@@ -71,5 +72,7 @@ public class Mind
 		bulletin.addObserver(d3);
 		Demon d4 = new Demon(new SiblingOf());
 		bulletin.addObserver(d4);
+		Demon d5 = new Demon(new DistinguishGender());
+		bulletin.addObserver(d5);
 	}
 }

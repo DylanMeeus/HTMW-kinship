@@ -50,18 +50,27 @@ public class UncleOf implements DemonFunctions
 			}
 		}
 		
-		if(trigger.equals(key) && goals.size()==1)
-		{
-			isTriggered = true;
-		}
-		return isTriggered;
+		
+		return trigger.equals(key) && goals.size()==1;
 	}
 
 	@Override
 	public void respond() 
 	{
+		// Only add the goals if there is no uncle-of me in the LT memory
+		boolean inLTMemory = false;
+		for(String LTmemory : bulletin.getLongTermMemory())
+		{
+			if(LTmemory.contains("uncle-of"))
+			{
+				inLTMemory = true;
+			}
+		}
+		if(!inLTMemory)
+		{
 		bulletin.addGoal("Find Me's parents");
 		bulletin.addGoal("Find parent's siblings");
 		bulletin.addGoal("Distinguish Uncles/Aunts");
+		}
 	}
 }

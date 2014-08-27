@@ -8,7 +8,7 @@ public class Launcher
 {
 	public static void main(String[] args)
 	{
-		View v = new View();
+	//	View v = new View();
 		Mind mind = new Mind();
 	}
 	

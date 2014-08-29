@@ -68,9 +68,9 @@ public class UncleOf implements DemonFunctions
 		}
 		if(!inLTMemory)
 		{
-		bulletin.addGoal("Find Me's parents");
-		bulletin.addGoal("Find parent's siblings");
-		bulletin.addGoal("Distinguish Uncles/Aunts");
+			bulletin.addGoal("Find Me's parents");
+			bulletin.addGoal("Find parent's siblings");
+			bulletin.addGoal("Distinguish Uncles/Aunts");
 		}
 	}
 }

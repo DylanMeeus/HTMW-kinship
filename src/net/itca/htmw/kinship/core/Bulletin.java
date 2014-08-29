@@ -24,7 +24,6 @@ public class Bulletin implements Observable
 	
 	private Bulletin()
 	{
-		// Singleton class.
 		longTermMemory = new ArrayList<String>();
 		shortTermMemory = new ArrayList<String>();
 		demons = new ArrayList<Observer>();
@@ -49,7 +48,6 @@ public class Bulletin implements Observable
 	public void addShortTermMemory(String memory)
 	{
 		shortTermMemory.add(memory);
-		//notifyObservers();
 	}
 	
 	public void addGoal(String goal)

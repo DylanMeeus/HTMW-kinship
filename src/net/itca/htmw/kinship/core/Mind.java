@@ -21,11 +21,10 @@ public class Mind
 	{
 		bulletin = Bulletin.getBulletin();
 		addInitialKin();
+		System.out.println("Original mind-bulletin setup");
 		bulletin.printBulletin();
 		initializeDemons();
 		addInitialGoal();
-		//bulletin.addLongTermMemory("Gordie uncle-of Me");
-		
 	}
 	
 	/**

@@ -24,7 +24,7 @@ public class Demon implements Observer
 		System.out.println("Demon-activated");
 		if(demonBehaviour.isTriggered())
 		{
-			System.out.println("Demon-triggered");
+			//System.out.println("Demon-triggered");
 			demonBehaviour.respond();
 			Bulletin b = Bulletin.getBulletin();
 			b.printBulletin();

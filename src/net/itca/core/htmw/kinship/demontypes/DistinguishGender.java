@@ -19,9 +19,7 @@ public class DistinguishGender implements DemonFunctions
 	@Override
 	public boolean isTriggered()
 	{
-		// Easy trigger, no P or Q (see book for details)
 		goals = bulletin.getGoals();
-		System.out.println("TRGGR");
 		return goals.contains(trigger);
 	}
 

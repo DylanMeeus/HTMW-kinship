@@ -13,15 +13,17 @@ import net.itca.htmw.kinship.interfaces.DemonFunctions;
  */
 public class SiblingOf implements DemonFunctions
 {
-	Bulletin bulletin = Bulletin.getBulletin();
-	String trigger = "Find siblings";
-	String foundGoal;
-	ArrayList<String> goals;
-	ArrayList<String> STMem;
+	private Bulletin bulletin = Bulletin.getBulletin();
+	private String trigger = "Find siblings";
+	private String foundGoal;
+	private ArrayList<String> goals;
+	private ArrayList<String> STMem;
+	
 	public SiblingOf()
 	{
 		
 	}
+	
 	@Override
 	public boolean isTriggered() 
 	{

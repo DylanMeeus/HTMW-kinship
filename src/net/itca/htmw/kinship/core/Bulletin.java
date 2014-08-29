@@ -95,9 +95,9 @@ public class Bulletin implements Observable
 	@Override
 	public void notifyObservers()
 	{
-		for(Observer demon : demons)
+		for(Observer observer : demons)
 		{
-			demon.update();
+			observer.update();
 		}
 	}
 	

@@ -5,6 +5,8 @@ import net.itca.core.htmw.kinship.demontypes.GoalReached;
 import net.itca.core.htmw.kinship.demontypes.ParentOf;
 import net.itca.core.htmw.kinship.demontypes.SiblingOf;
 import net.itca.core.htmw.kinship.demontypes.UncleOf;
+import net.itca.htmw.kinship.controllers.ViewController;
+import net.itca.htmw.kinship.view.View;
 
 /**
  * A class representing part of the mind. 
@@ -20,6 +22,9 @@ public class Mind
 	public Mind()
 	{
 		bulletin = Bulletin.getBulletin();
+		ViewController vc = new ViewController(this);
+		View v = new View(vc);
+		bulletin.addObserver(v);
 		addInitialKin();
 		System.out.println("Original mind-bulletin setup");
 		bulletin.printBulletin();

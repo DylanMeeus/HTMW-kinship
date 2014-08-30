@@ -19,7 +19,6 @@ import net.itca.htmw.kinship.interfaces.Observer;
 
 public class View extends JFrame implements Observer
 {
-
 	private JPanel memoryLabels;
 	private JPanel memoryLists;
 	private JList<String> longTerm;

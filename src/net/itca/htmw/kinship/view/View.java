@@ -80,6 +80,7 @@ public class View extends JFrame implements Observer
 		// Update the listmodels.
 		// Fetch the data from the controller
 		ArrayList<String> LTMemory = bulletin.getLongTermMemory();
+		ArrayList<String> STMemory = bulletin.getShortTermMemory();
 		for(String memory : LTMemory)
 		{
 			if(!LTListModel.contains(memory))
@@ -96,6 +97,21 @@ public class View extends JFrame implements Observer
 					ex.printStackTrace();
 				}
 			}
+		}
+		
+		for(String memory : STMemory)
+		{
+			if(!STListModel.contains(memory))
+			{
+				STListModel.addElement(memory);
+			}
+		}
+		
+		ArrayList<String> goals = bulletin.getGoals();
+		
+		for(String goal : goals)
+		{
+			
 		}
 		// Do same for other memory areas.
 	}

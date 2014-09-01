@@ -17,8 +17,14 @@ import net.itca.htmw.kinship.controllers.ViewController;
 import net.itca.htmw.kinship.core.Bulletin;
 import net.itca.htmw.kinship.interfaces.Observer;
 
+/**
+ * GUI for the program.
+ * @author Dylan
+ *
+ */
 public class View extends JFrame implements Observer
 {
+	private static final long serialVersionUID = 1L;
 	private JPanel memoryLabels;
 	private JPanel memoryLists;
 	private JList<String> longTerm;
@@ -39,6 +45,7 @@ public class View extends JFrame implements Observer
 	{
 		this.setTitle("Bulletin board");
 		this.setSize(450,500);
+		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
 		

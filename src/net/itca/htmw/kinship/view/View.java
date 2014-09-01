@@ -81,6 +81,19 @@ public class View extends JFrame implements Observer
 		// Fetch the data from the controller
 		ArrayList<String> LTMemory = bulletin.getLongTermMemory();
 		ArrayList<String> STMemory = bulletin.getShortTermMemory();
+		
+		// Remove current data, to update it with the new data.
+		try
+		{
+			Thread.sleep(100);
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		LTListModel.removeAllElements();
+		STListModel.removeAllElements();
+		goalListModel.removeAllElements();
 		for(String memory : LTMemory)
 		{
 			if(!LTListModel.contains(memory))
@@ -88,17 +101,16 @@ public class View extends JFrame implements Observer
 				LTListModel.addElement(memory);
 				
 				// Sleep based on a "debug" boolean?
-				try
-				{
-					//Thread.sleep(100);
-				}
-				catch(Exception ex)
-				{
-					ex.printStackTrace();
-				}
 			}
 		}
-		
+		try
+		{
+			Thread.sleep(100);
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
 		for(String memory : STMemory)
 		{
 			if(!STListModel.contains(memory))
@@ -111,7 +123,10 @@ public class View extends JFrame implements Observer
 		
 		for(String goal : goals)
 		{
-			
+			if(!goalListModel.contains(goal))
+			{
+				goalListModel.addElement(goal);
+			}
 		}
 		// Do same for other memory areas.
 	}

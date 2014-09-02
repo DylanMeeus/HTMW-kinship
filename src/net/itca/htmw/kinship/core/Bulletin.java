@@ -64,20 +64,11 @@ public class Bulletin implements Observable
 	public void printBulletin()
 	{
 		System.out.println("\nLong-term memory\n------------------------");
-		for(String s : longTermMemory)
-		{
-			System.out.println(s);
-		}
+		longTermMemory.forEach(s -> System.out.println(s));
 		System.out.println("\nShort-term memory\n------------------------");
-		for(String s : shortTermMemory)
-		{
-			System.out.println(s);
-		}
+		shortTermMemory.forEach(s -> System.out.println(s));
 		System.out.println("\nGoals\n------------------------");
-		for(String s : goals)
-		{
-			System.out.println(s);
-		}
+		goals.forEach(s -> System.out.println(s));
 	}
 
 	@Override
@@ -95,10 +86,7 @@ public class Bulletin implements Observable
 	@Override
 	public void notifyObservers()
 	{
-		for(Observer observer : demons)
-		{
-			observer.update();
-		}
+		demons.forEach(demon -> demon.update());
 	}
 	
 	public ArrayList<String> getLongTermMemory()

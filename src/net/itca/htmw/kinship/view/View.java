@@ -184,7 +184,7 @@ public class View extends JFrame implements Observer
 		// Remove current data, to update it with the new data.
 		try
 		{
-		//	Thread.sleep(100);
+	//		Thread.sleep(100);
 		}
 		catch(Exception ex)
 		{

@@ -30,6 +30,7 @@ public class GoalReached implements DemonFunctions
 		// Check if the goal is met by checking Long-Term memory for goal.
 		ArrayList<String> LTMemory = bulletin.getLongTermMemory();
 		ArrayList<String> goals = bulletin.getGoals();
+		
 		if(LTMemory.contains(trigger.substring(0,trigger.length()-1)))
 		{
 			int memLoc = goals.indexOf(trigger);

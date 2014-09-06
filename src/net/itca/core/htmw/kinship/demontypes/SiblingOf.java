@@ -58,14 +58,11 @@ public class SiblingOf implements DemonFunctions
 		
 		// Find the parents whose siblings we seek (in short-term memory)
 		ArrayList<String> parents = new ArrayList<String>();
-		for(String memory : STMem)
-		{
-			String[] stmemsplit = memory.split(" ");
-			if(stmemsplit[1].equals("parent-of"))
-			{
-				parents.add(stmemsplit[0]);
-			}
-		}
+		
+		STMem.stream()
+			.filter(s -> s.contains("parent-of"))
+			.forEach(result -> parents.add(result.split(" ")[0]));
+		
 		
 		for(String LTmemory : LTMem)
 		{

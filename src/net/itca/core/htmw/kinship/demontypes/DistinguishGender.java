@@ -44,16 +44,24 @@ public class DistinguishGender implements DemonFunctions
 		ArrayList<String> LTMem = bulletin.getLongTermMemory();
 		// We'll quickly load the siblings of the short-term memory, essentially put them in the short term memory of the program
 		ArrayList<String> siblingsOfParents = new ArrayList<String>();
-		for(String STmemory : STMem)
-		{
-			if(STmemory.contains("sibling-of"))
-			{
-				siblingsOfParents.add(STmemory.split(" ")[0]);
-			}
-		}
+		
+		STMem.stream()
+			.parallel()
+			.filter(s -> s.contains("sibling-of"))
+			.forEach(res -> siblingsOfParents.add(res.split(" ")[0]));
+
+//		for(String STmemory : STMem)
+//		{
+//			if(STmemory.contains("sibling-of"))
+//			{
+//				siblingsOfParents.add(STmemory.split(" ")[0]);
+//			}
+//		}
 		
 		
 		ArrayList<String> tempLT = new ArrayList<String>();
+		
+		
 		for(String LTmemory : LTMem)
 		{
 			String[] ltmemorysplit = LTmemory.split(" ");
@@ -64,10 +72,9 @@ public class DistinguishGender implements DemonFunctions
 				//bulletin.addLongTermMemory("Gordie uncle-of Me");
 			}
 		}
-		for(String foundmem : tempLT)
-		{	
-			bulletin.addLongTermMemory(foundmem);
-		}
+		
+		tempLT.forEach(tempMemory -> bulletin.addLongTermMemory(tempMemory));
+
 	}
 
 }

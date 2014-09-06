@@ -37,6 +37,9 @@ public class UncleOf implements DemonFunctions
 		boolean isTriggered = false;
 		// No repetition because the key will equal the last subscription in the goal section.
 		// Probably not the best way, but it follows the books explanation.
+		
+		
+		
 		for(String goal : goals)
 		{
 			String[] split = goal.split(" ");
@@ -58,14 +61,13 @@ public class UncleOf implements DemonFunctions
 	public void respond() 
 	{
 		// Only add the goals if there is no uncle-of me in the LT memory
-		boolean inLTMemory = false;
-		for(String LTmemory : bulletin.getLongTermMemory())
-		{
-			if(LTmemory.contains("uncle-of"))
-			{
-				inLTMemory = true;
-			}
-		}
+		
+		ArrayList<String> LTMem = bulletin.getLongTermMemory();
+		
+		boolean inLTMemory = LTMem.stream()
+							.anyMatch(memory -> memory.contains("uncle-of"));
+
+
 		if(!inLTMemory)
 		{
 			bulletin.addGoal("Find Me's parents");

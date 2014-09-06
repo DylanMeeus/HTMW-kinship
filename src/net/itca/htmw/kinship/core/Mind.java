@@ -24,7 +24,7 @@ public class Mind
 		bulletin = Bulletin.getBulletin();
 		ViewController vc = new ViewController(this);
 		View v = new View(vc);
-		bulletin.addObserver(v);
+		//bulletin.addObserver(v); Removed in functional part due to some error I can't 100% trace.
 		addInitialKin();
 		System.out.println("Original mind-bulletin setup");
 		bulletin.printBulletin();
